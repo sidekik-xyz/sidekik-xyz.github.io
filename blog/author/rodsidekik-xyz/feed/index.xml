@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Rod Fuentes &#8211; SideKik</title>
+	<atom:link href="/blog/author/rodsidekik-xyz/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Easier EVM Smart Contract Interactions For Everyone</description>
+	<lastBuildDate>Fri, 16 Dec 2022 05:06:28 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>Intro to Solidity: A Simple, Hello World Smart Contract &#8211; Ethereum Developer Tutorial for Beginners</title>
+		<link>/blog/intro-to-solidity-a-simple-hello-world-smart-contract-ethereum-developer-tutorial-for-beginners/</link>
+					<comments>/blog/intro-to-solidity-a-simple-hello-world-smart-contract-ethereum-developer-tutorial-for-beginners/#respond</comments>
+		
+		<dc:creator><![CDATA[Rod Fuentes]]></dc:creator>
+		<pubDate>Fri, 16 Dec 2022 05:06:28 +0000</pubDate>
+				<category><![CDATA[Intro to Solidity Programming]]></category>
+		<category><![CDATA[learning]]></category>
+		<category><![CDATA[smart contract]]></category>
+		<category><![CDATA[solidity]]></category>
+		<guid isPermaLink="false">/?p=1179</guid>
+
+					<description><![CDATA[In this post, we create a simple &#8220;hello world&#8221; smart contract, compile it, and deploy it to your local chain. We also cover basics, such as declaring a license type, pragma solidity version numbers, and declaring a public variable. We hope you enjoy it! The Simplest Smart Contract Let&#8217;s write the simplest smart contract: Hello &#8230;<p class="read-more"> <a class="" href="/blog/intro-to-solidity-a-simple-hello-world-smart-contract-ethereum-developer-tutorial-for-beginners/"> <span class="screen-reader-text">Intro to Solidity: A Simple, Hello World Smart Contract &#8211; Ethereum Developer Tutorial for Beginners</span> Read More &#187;</a></p>]]></description>
+										<content:encoded><![CDATA[
+<p>In this post, we create a simple &#8220;hello world&#8221; smart contract, compile it, and deploy it to your local chain. We also cover basics, such as declaring a license type, <code>pragma solidity</code> version numbers, and declaring a public variable. We hope you enjoy it!</p>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div class="ast-oembed-container" style="height: 100%;"><iframe title="Intro to Solidity: A Simple, Hello World Smart Contract - Ethereum Developer Tutorial for Beginners" width="1200" height="675" src="https://www.youtube.com/embed/nwV-OgKNIug?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+</div></figure>
+
+
+
+<h1>The Simplest Smart Contract</h1>
+
+
+
+<p>Let&#8217;s write the simplest smart contract: Hello World <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f44b.png" alt="👋" class="wp-smiley" style="height: 1em; max-height: 1em;" /> <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f30e.png" alt="🌎" class="wp-smiley" style="height: 1em; max-height: 1em;" />  First, create a new Solidity file called, <code>HelloWorld.sol</code>. I did this by simply copy-pasting an existing .sol file, but you can always start from scratch if you prefer. </p>
+
+
+
+<h2>Name the contract, HelloWorld</h2>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="382" src="/wp-content/uploads/2022/12/image-13-1024x382.png" alt="" class="wp-image-1180" srcset="/wp-content/uploads/2022/12/image-13-1024x382.png 1024w, /wp-content/uploads/2022/12/image-13-300x112.png 300w, /wp-content/uploads/2022/12/image-13-768x286.png 768w, /wp-content/uploads/2022/12/image-13.png 1086w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>We&#8217;ll write the Solidity code in between the curly braces (starting at line 7, above). But first, let&#8217;s briefly describe what&#8217;s going on in lines 1-2. </p>
+
+
+
+<h2>License Declaration</h2>
+
+
+
+<p>The first line is a license declaration. Your code will compile without a license declaration, but if you don&#8217;t put a license, the compiler will emit warnings. I don&#8217;t like warnings, so let&#8217;s add either UNLICENSED or MIT (a permissive, open-source license). </p>
+
+
+
+<h2>Solidity Compiler Version Declaration</h2>
+
+
+
+<p>In line 2, we specify the compiler version. I set it to Solidity <code>^0.8.17</code>. If you want to target a compiler version that is greater than or equal to 0.8.17, you include a carrot <code>^</code>, which tells the Solidity compiler that this contract is meant for compiler greater than or equal to 0.8.17. It is considered good practice to set the compiler version to a specific number, especially when deploying to mainnet so that future versions (which may include breaking changes) don&#8217;t wreck your code. </p>
+
+
+
+<h2>Adding a String to your smart contract</h2>
+
+
+
+<p>In line 6, <code>contract HelloWorld{}</code> is the simplest Solidity contract there is. But it&#8217;s rather uninspiring because it does nothing at all. So let&#8217;s spice things up <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f336.png" alt="🌶" class="wp-smiley" style="height: 1em; max-height: 1em;" /> </p>
+
+
+
+<p>To add a string inside this smart contract, at line 7, type:</p>
+
+
+
+<p><code>string public someString = "Hello World!";</code></p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="350" src="/wp-content/uploads/2022/12/image-14-1024x350.png" alt="" class="wp-image-1181" srcset="/wp-content/uploads/2022/12/image-14-1024x350.png 1024w, /wp-content/uploads/2022/12/image-14-300x102.png 300w, /wp-content/uploads/2022/12/image-14-768x262.png 768w, /wp-content/uploads/2022/12/image-14.png 1078w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>The <code>string public</code> declaration means that anyone can read the SomeString variable after we deploy the smart contract on chain.  The second part sets the variable <code>someString</code> to &#8220;Hello World!&#8221; Now compile this contract and deploy it via Terminal by executing <code>npm run deploy</code>:</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="256" src="/wp-content/uploads/2022/12/image-15-1024x256.png" alt="" class="wp-image-1182" srcset="/wp-content/uploads/2022/12/image-15-1024x256.png 1024w, /wp-content/uploads/2022/12/image-15-300x75.png 300w, /wp-content/uploads/2022/12/image-15-768x192.png 768w, /wp-content/uploads/2022/12/image-15-1536x383.png 1536w, /wp-content/uploads/2022/12/image-15.png 1591w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>Finally, test that the smart contract does what you expect. Load the contract in Sidekik and verify that you can read <code>someString</code>. Do that by clicking on the blue button, <em>someString</em>. Sidekik should return the output value, &#8220;Hello world!&#8221;</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="228" src="/wp-content/uploads/2022/12/image-16-1024x228.png" alt="" class="wp-image-1183" srcset="/wp-content/uploads/2022/12/image-16-1024x228.png 1024w, /wp-content/uploads/2022/12/image-16-300x67.png 300w, /wp-content/uploads/2022/12/image-16-768x171.png 768w, /wp-content/uploads/2022/12/image-16-1536x341.png 1536w, /wp-content/uploads/2022/12/image-16.png 1849w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>Congrats on completing another step in your Solidity programming language journey. Stay tuned for the next post, where we demonstrate how to build a simple counter. There, we&#8217;ll introduce the concept of read and write functions.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/blog/intro-to-solidity-a-simple-hello-world-smart-contract-ethereum-developer-tutorial-for-beginners/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Setting Up Your Local Environment – Intro to Solidity: Ethereum Developer Tutorial for Beginners</title>
+		<link>/blog/setting-up-your-local-environment-intro-to-solidity-ethereum-developer-tutorial-for-beginners/</link>
+					<comments>/blog/setting-up-your-local-environment-intro-to-solidity-ethereum-developer-tutorial-for-beginners/#respond</comments>
+		
+		<dc:creator><![CDATA[Rod Fuentes]]></dc:creator>
+		<pubDate>Thu, 15 Dec 2022 22:05:10 +0000</pubDate>
+				<category><![CDATA[Intro to Solidity Programming]]></category>
+		<guid isPermaLink="false">/?p=1168</guid>
+
+					<description><![CDATA[Welcome to the Sidekik class on Solidity programming. In this video and blog series, we aim to teach new developers how to code smart contracts – for free. Setting Up Your Local Environment In today&#8217;s post, we show you how to setup your Solidity Programming environment so that you have a solid foundation for Blockchain development. &#8230;<p class="read-more"> <a class="" href="/blog/setting-up-your-local-environment-intro-to-solidity-ethereum-developer-tutorial-for-beginners/"> <span class="screen-reader-text">Setting Up Your Local Environment – Intro to Solidity: Ethereum Developer Tutorial for Beginners</span> Read More &#187;</a></p>]]></description>
+										<content:encoded><![CDATA[
+<p>Welcome to the Sidekik class on Solidity programming. In this video and blog series, we aim to teach new developers how to code smart contracts – for free. </p>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div class="ast-oembed-container" style="height: 100%;"><iframe title="Intro to Solidity: Setting Up Your Local Environment - Ethereum Developer Tutorial for Beginners" width="1200" height="675" src="https://www.youtube.com/embed/O_ofQXNDnhw?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+</div></figure>
+
+
+
+<h1>Setting Up Your Local Environment</h1>
+
+
+
+<p>In today&#8217;s post, we show you how to setup your Solidity Programming environment so that you have a solid foundation for Blockchain development.</p>
+
+
+
+<h2>Hardhat is for professionals</h2>
+
+
+
+<p>I recommend Hardhat for Solidity programmers who are serious about building smart contracts. Many tutorials recommend Remix, and that’s a great environment for tinkering. But if you talk to professional developers, you’ll see that they use either Hardhat or Foundry for real work.</p>
+
+
+
+<p>Let&#8217;s start with a solid foundation as we dive into Solidity. You&#8217;ll need to spend 5-10 minutes setting up our Hardhat environment. </p>
+
+
+
+<h3>Installing Hardhat</h3>
+
+
+
+<p>You can install Hardhat directly by running <code>npm install --save-dev hardhat</code> in your Terminal console. But I strongly recommend you accelerate your setup by cloning the <a href="https://github.com/mistersingh179/badass-hardhat-setup">Badass Hardhat Repo</a>, created by Sidekik&#8217;s CTO. It&#8217;s pre-configured to help you go faster. For instance, it&#8217;s configured to auto-compile and deploy after each file change, and it writes your ABI and contract addresses to a JSON file for easy reference.</p>
+
+
+
+<p>Open your terminal and run <code>git clone git@github.com:mistersingh179/badass-hardhat-setup.git</code>. Next, run <code>npm install</code> to download the necessary packages and dependencies. </p>
+
+
+
+<figure class="wp-block-image aligncenter size-large"><img decoding="async" width="1024" height="563" src="/wp-content/uploads/2022/12/image-4-1024x563.png" alt="Screenshot of iTerm showing how to clone the badass-hardhat-repo and install the necessary packages to accelerate a developer's smart contract lifecycle." class="wp-image-1169" srcset="/wp-content/uploads/2022/12/image-4-1024x563.png 1024w, /wp-content/uploads/2022/12/image-4-300x165.png 300w, /wp-content/uploads/2022/12/image-4-768x422.png 768w, /wp-content/uploads/2022/12/image-4-1536x844.png 1536w, /wp-content/uploads/2022/12/image-4.png 1873w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>Open your IDE of choice, (I like VScode, but you do you <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f60e.png" alt="😎" class="wp-smiley" style="height: 1em; max-height: 1em;" />) and explore the repo. You&#8217;ll notice a contracts folder with *.sol files and a deploy folder with *.js Javascript files. </p>
+
+
+
+<h3>Setup Local Environment Variables</h3>
+
+
+
+<p>This repo uses three environment variables to help accelerate your smart contract development process: a mnemonic, an Etherscan API key, and an Alchemy API key. </p>
+
+
+
+<figure class="wp-block-image aligncenter size-large"><img decoding="async" width="1024" height="434" src="/wp-content/uploads/2022/12/image-5-1024x434.png" alt="" class="wp-image-1170" srcset="/wp-content/uploads/2022/12/image-5-1024x434.png 1024w, /wp-content/uploads/2022/12/image-5-300x127.png 300w, /wp-content/uploads/2022/12/image-5-768x325.png 768w, /wp-content/uploads/2022/12/image-5-1536x651.png 1536w, /wp-content/uploads/2022/12/image-5.png 1667w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>The mnemonic is &#8220;a 12 or 24 word mnemonic phrase as defined by BIP39.&#8221; It&#8217;s default value is &#8220;test test test test test test test test test test test junk&#8221;. Because we&#8217;re just developing in our local environment, this mnemonic will work. However, in a production environment, you would use your wallet&#8217;s 12 or 24 seed phrase (private key), which would be the source of gas to deploy a contract on a target blockchain. </p>
+
+
+
+<p>The second item you need is the Etherscan API key. This is free and easy to obtain. Navigate to Etherscan.io, create an account, and then visit the &#8220;API Keys&#8221; tab on the left-hand side. Create a new key and copy-paste that into your .env file. This API Key from Etherscan is useful to upload ABIs and verify contracts that you have deployed to a testnet or mainnet.</p>
+
+
+
+<figure class="wp-block-image aligncenter size-large"><img decoding="async" width="1024" height="725" src="/wp-content/uploads/2022/12/image-6-1024x725.png" alt="" class="wp-image-1171" srcset="/wp-content/uploads/2022/12/image-6-1024x725.png 1024w, /wp-content/uploads/2022/12/image-6-300x212.png 300w, /wp-content/uploads/2022/12/image-6-768x544.png 768w, /wp-content/uploads/2022/12/image-6.png 1259w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>Finally, you&#8217;ll want to grab an Alchemy API key. Alchemy is a blockchain scaling platform that gives devs network connectivity and node management endpoints to certain blockchains. In the <code>badass-hardhat-setup</code>, Alchemy is used to create a fork of mainnet whenever you run a local chain. The advantage of this approach is that you bring in a snapshot of everything that&#8217;s on-chain at that moment so that your local environment can interact with external contracts (e.g., USDC, Uniswap Router, etc.). </p>
+
+
+
+<figure class="wp-block-image aligncenter size-large"><img decoding="async" width="1024" height="756" src="/wp-content/uploads/2022/12/image-7-1024x756.png" alt="Get an Alchemy API key to enable simple forking of mainnet in your local environment." class="wp-image-1172" srcset="/wp-content/uploads/2022/12/image-7-1024x756.png 1024w, /wp-content/uploads/2022/12/image-7-300x221.png 300w, /wp-content/uploads/2022/12/image-7-768x567.png 768w, /wp-content/uploads/2022/12/image-7.png 1256w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h3>Running a Local Blockchain</h3>
+
+
+
+<p>Much like running a local server to test and debug your code, Hardhat enables you to run a local copy of the blockchain. To do this, run <code>npm run chain</code> in your Terminal. The <code>badass-hardhat-setup</code> repo is configured to run the local chain and make it accessible via HTTP and Websocket JSON-RPC server at http://127.0.0.1:8545/. </p>
+
+
+
+<figure class="wp-block-image aligncenter size-full"><img decoding="async" width="716" height="641" src="/wp-content/uploads/2022/12/image-8.png" alt="The badass-hardhat-setup repo is configured to run the local chain and make it accessible via HTTP and Websocket JSON-RPC server at http://127.0.0.1:8545/. " class="wp-image-1173" srcset="/wp-content/uploads/2022/12/image-8.png 716w, /wp-content/uploads/2022/12/image-8-300x269.png 300w" sizes="(max-width: 716px) 100vw, 716px" /></figure>
+
+
+
+<p>Depending on your version of NPM, Node, and other factors, you may get an error about missing packages. If that happens, follow the instructions in the error message to resolve the missing dependencies: </p>
+
+
+
+<figure class="wp-block-image aligncenter size-large"><img decoding="async" width="1024" height="297" src="/wp-content/uploads/2022/12/image-10-1024x297.png" alt="" class="wp-image-1175" srcset="/wp-content/uploads/2022/12/image-10-1024x297.png 1024w, /wp-content/uploads/2022/12/image-10-300x87.png 300w, /wp-content/uploads/2022/12/image-10-768x223.png 768w, /wp-content/uploads/2022/12/image-10-1536x445.png 1536w, /wp-content/uploads/2022/12/image-10.png 1876w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>In the example above, I was missing various packages. I ran the following in Terminal: </p>
+
+
+
+<p><code>npm install --save-dev "@nomicfoundation/hardhat-network-helpers@^1.0.0" "@nomicfoundation/hardhat-chai-matchers@^1.0.0" "@nomiclabs/hardhat-ethers@^2.0.0" "@nomiclabs/hardhat-etherscan@^3.0.0" "@types/chai@^4.2.0" "@types/mocha@^9.1.0" "@typechain/ethers-v5@^10.1.0" "@typechain/hardhat@^6.1.2" "chai@^4.2.0" "hardhat-gas-reporter@^1.0.8" "solidity-coverage@^0.8.1" "ts-node@>=8.0.0" "typechain@^8.1.0" "typescript@>=4.5.0"</code></p>
+
+
+
+<p>and that resolved the issue for me. Don&#8217;t just copy-paste the above; look at the specific error message if you run into this issue.</p>
+
+
+
+<h3>Compiling &amp; Deploying your Smart Contracts</h3>
+
+
+
+<p>After your local chain is running, you&#8217;ll compile and deploy your contracts to that chain. Execute <code>npm run deploy</code> in your Terminal: </p>
+
+
+
+<figure class="wp-block-image aligncenter size-full"><img decoding="async" width="587" height="212" src="/wp-content/uploads/2022/12/image-9.png" alt="" class="wp-image-1174" srcset="/wp-content/uploads/2022/12/image-9.png 587w, /wp-content/uploads/2022/12/image-9-300x108.png 300w" sizes="(max-width: 587px) 100vw, 587px" /></figure>
+
+
+
+<p>Congrats, you just setup your Hardhat environment, ran a local chain, and deployed your smart contract to it. Now how do you see the fruits of your labor? Simple: connect Sidekik to your environment to easily interact with your code and check that it works as intended. </p>
+
+
+
+<h2>Use Sidekik to Interact with your smart contract</h2>
+
+
+
+<p>Navigate to the client-side web application at <a rel="noreferrer noopener" href="https://app.sidekik.xyz/" target="_blank">https://app.sidekik.xyz/</a>. First, verify that your local chain is running and connected. Second, click on Sync File(s) and select the JSON file that contains your ABI and deployed contract address. (If you&#8217;re using the <code>badass-hardhat-setup</code> repo, then you&#8217;re already outputting your ABI and deployed contract address to a JSON file, <code>contract-addresses.json-file</code> <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f389.png" alt="🎉" class="wp-smiley" style="height: 1em; max-height: 1em;" /> If you&#8217;re not using our recommended repo, <a rel="noreferrer noopener" href="https://docs.sidekik.xyz/setup/overview/how-to-save-contract-addresses-to-disk" target="_blank">here&#8217;s documentation</a> on how to write the ABI and address to a JSON file.)  You&#8217;ll know that Sidekik is ready when it shows your deployed contracts (<code>FavContract</code> and <code>MyContract</code>), their addresses, and ABIs:</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="443" src="/wp-content/uploads/2022/12/image-12-1024x443.png" alt="" class="wp-image-1177" srcset="/wp-content/uploads/2022/12/image-12-1024x443.png 1024w, /wp-content/uploads/2022/12/image-12-300x130.png 300w, /wp-content/uploads/2022/12/image-12-768x332.png 768w, /wp-content/uploads/2022/12/image-12.png 1133w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>After you click Continue, Sidekik gives you a visual way to interact with your smart contract. For instance, your public variables are readable by clicking on the blue buttons, which simulates a read transaction on your local chain. You can also run public functions. Just input your variables, click on the orange button, and you&#8217;ll see that function&#8217;s output. </p>
+
+
+
+<p>As an example, confirm that your smart contract logic is correct by clicking on the variable <code>name</code> after running your <code>changeName</code> function to demonstrate that your code changed the <code>name</code> variable from &#8220;foobar&#8221; to your input.</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="565" src="/wp-content/uploads/2022/12/image-11-1024x565.png" alt="" class="wp-image-1176" srcset="/wp-content/uploads/2022/12/image-11-1024x565.png 1024w, /wp-content/uploads/2022/12/image-11-300x165.png 300w, /wp-content/uploads/2022/12/image-11-768x423.png 768w, /wp-content/uploads/2022/12/image-11-1536x847.png 1536w, /wp-content/uploads/2022/12/image-11.png 1792w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>Again, congratulations on completing this first step on your journey into the Solidity programming language. We look forward to hearing from you on <a href="https://twitter.com/sidekik_xyz" target="_blank" rel="noreferrer noopener">Twitter</a>, <a href="https://discord.gg/yjYSbyapkg" data-type="URL" data-id="https://discord.gg/yjYSbyapkg" target="_blank" rel="noreferrer noopener">Discord</a>, or in the comments below!</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/blog/setting-up-your-local-environment-intro-to-solidity-ethereum-developer-tutorial-for-beginners/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Better Onboarding &#038; The Myth Busters Use Case</title>
+		<link>/blog/better-onboarding-the-myth-busters-use-case/</link>
+					<comments>/blog/better-onboarding-the-myth-busters-use-case/#respond</comments>
+		
+		<dc:creator><![CDATA[Rod Fuentes]]></dc:creator>
+		<pubDate>Tue, 13 Dec 2022 16:07:52 +0000</pubDate>
+				<category><![CDATA[Changelog]]></category>
+		<category><![CDATA[dev tool]]></category>
+		<category><![CDATA[smart contract]]></category>
+		<category><![CDATA[solidity]]></category>
+		<guid isPermaLink="false">/?p=1143</guid>
+
+					<description><![CDATA[GM frens 👋 and welcome to the inaugural newsletter for our developer audience. In this post, we cover what&#8217;s new, what&#8217;s been fixed, and use cases from our community. We look forward to hearing from you! Infinite Loop Glitch in the UI 👾 We fixed a bug that occurred when users first uploaded ABI files &#8230;<p class="read-more"> <a class="" href="/blog/better-onboarding-the-myth-busters-use-case/"> <span class="screen-reader-text">Better Onboarding &#038; The Myth Busters Use Case</span> Read More &#187;</a></p>]]></description>
+										<content:encoded><![CDATA[
+<p>GM frens <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f44b.png" alt="👋" class="wp-smiley" style="height: 1em; max-height: 1em;" /> and welcome to the inaugural newsletter for our developer audience. In this post, we cover what&#8217;s new, what&#8217;s been fixed, and use cases from our community. We look forward to hearing from you!</p>
+
+
+
+<h1>Infinite Loop Glitch in the UI <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f47e.png" alt="👾" class="wp-smiley" style="height: 1em; max-height: 1em;" /></h1>
+
+
+
+<p>We fixed a bug that occurred when users first uploaded ABI files and then connected a chain, which caused the UI to enter a glitchy loop:</p>
+
+
+
+<figure class="wp-block-image aligncenter size-full"><img decoding="async" width="640" height="580" src="/wp-content/uploads/2022/12/onboarding-glitch.gif" alt="Infinite looping UI glitch was caused by repeat polling on a name clash. This was resolved." class="wp-image-1144"/></figure>
+
+
+
+<p>The front-end catches this flow and guides the user to connect a local chain or connect via MetaMask. This fix also solved the large number of getBalance() requests. </p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="511" src="/wp-content/uploads/2022/12/image-1024x511.png" alt="Sidekik now offers better messaging when there is an error to improve the user onboarding experience." class="wp-image-1145" srcset="/wp-content/uploads/2022/12/image-1024x511.png 1024w, /wp-content/uploads/2022/12/image-300x150.png 300w, /wp-content/uploads/2022/12/image-768x383.png 768w, /wp-content/uploads/2022/12/image-1536x766.png 1536w, /wp-content/uploads/2022/12/image-2048x1022.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h1>Better Error Messaging via Console.Logs <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f47e.png" alt="👾" class="wp-smiley" style="height: 1em; max-height: 1em;" /></h1>
+
+
+
+<p>Users asked for improved browser console.logs to understand errors. We added that in our most recent release: </p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="471" src="/wp-content/uploads/2022/12/improved-logs-sk-1024x471.png" alt="Sidekik also offers guidance in the browser's console.logs so that users don't get stuck. " class="wp-image-1146" srcset="/wp-content/uploads/2022/12/improved-logs-sk-1024x471.png 1024w, /wp-content/uploads/2022/12/improved-logs-sk-300x138.png 300w, /wp-content/uploads/2022/12/improved-logs-sk-768x353.png 768w, /wp-content/uploads/2022/12/improved-logs-sk.png 1190w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>We also provide in-browser instructions if you prefer to connect with MetaMask: </p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="479" src="/wp-content/uploads/2022/12/image-1-1024x479.png" alt="The console.logs guidance is also provided when users connect their MetaMask wallet, instead of running a local Hardhat node." class="wp-image-1148" srcset="/wp-content/uploads/2022/12/image-1-1024x479.png 1024w, /wp-content/uploads/2022/12/image-1-300x140.png 300w, /wp-content/uploads/2022/12/image-1-768x359.png 768w, /wp-content/uploads/2022/12/image-1.png 1194w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h1>Sync Directory is Faster <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f47e.png" alt="👾" class="wp-smiley" style="height: 1em; max-height: 1em;" /></h1>
+
+
+
+<p>We got feedback that our <strong>Sync Directory</strong> feature was too slow, which occurred because the web app polled (most) files in the sync&#8217;ed directory to determine if each file contained ABIs and addresses. We drastically improved this feature, especially for users on Foundry. If you tried this before, we suggest giving it another whirl. </p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="441" src="/wp-content/uploads/2022/12/image-2-1024x441.png" alt="Sidekik offers a Sync Directory feature to upload a smart contract project. Sidekik then searches the files in that directory for ABIs and deployed addresses." class="wp-image-1149" srcset="/wp-content/uploads/2022/12/image-2-1024x441.png 1024w, /wp-content/uploads/2022/12/image-2-300x129.png 300w, /wp-content/uploads/2022/12/image-2-768x331.png 768w, /wp-content/uploads/2022/12/image-2.png 1290w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>Note, the principle use case for uploading an entire directory is limited to scenarios where you have many local contracts that you want to import into Sidekik. If you&#8217;re interested in exploring one or a few contracts from your local environment, we strongly recommend using a JSON file and uploading it using the &#8220;Sync File(s)&#8221; button. Regardless, <strong>you must identify each contract address and its ABI</strong>. There are three ways to do this:</p>
+
+
+
+<p>1. You output a JSON file during your compile process that saves the deployed addresses and ABI to a local file. [<strong>Strongly Recommended <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f4aa.png" alt="💪" class="wp-smiley" style="height: 1em; max-height: 1em;" /></strong>]</p>
+
+
+
+<p>2. You point Sidekik to a directory to identify all ABIs (and addresses <em>if you are storing them to a file</em>).</p>
+
+
+
+<p>3. You manually enter a contract addresses and ABI in the input box. </p>
+
+
+
+<p>The third method is useful for contracts that are deployed to a chain. In a dev environment, that&#8217;s not the best way because addresses may change every time you deploy contracts.<br>For step-by-step instructions, along with a how-to video, go here: <a href="https://docs.sidekik.xyz/setup/overview/setting-up-contracts-with-sidekik" target="_blank" rel="noreferrer noopener">https://docs.sidekik.xyz/setup/overview/setting-up-contracts-with-sidekik</a> </p>
+
+
+
+<h1>Now Supporting Overloaded Functions <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f195.png" alt="🆕" class="wp-smiley" style="height: 1em; max-height: 1em;" /> <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f389.png" alt="🎉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></h1>
+
+
+
+<p>Thanks to feedback from @ChiliPaneer, we&#8217;ve added support for overloaded functions. As a reminder, overloading a function means that you can create a function that has the same name but different arguments and/or types. This is seen as three separate function calls in Sidekik, each with different input parameters: </p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="348" src="/wp-content/uploads/2022/12/image-3-1024x348.png" alt="Sidekik now supports overloaded functions in Solidity. " class="wp-image-1150" srcset="/wp-content/uploads/2022/12/image-3-1024x348.png 1024w, /wp-content/uploads/2022/12/image-3-300x102.png 300w, /wp-content/uploads/2022/12/image-3-768x261.png 768w, /wp-content/uploads/2022/12/image-3-1536x523.png 1536w, /wp-content/uploads/2022/12/image-3-2048x697.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h1>Use Case: Exploring Hypotheses <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f5fa.png" alt="🗺" class="wp-smiley" style="height: 1em; max-height: 1em;" /> <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f9d0.png" alt="🧐" class="wp-smiley" style="height: 1em; max-height: 1em;" /></h1>
+
+
+
+<p>Maybe you&#8217;ve heard that having more zeroes in a wallet address can save on gas fees. In this short video, Sandeep investigates this claim using Sidekik. Too-long-didn&#8217;t-watch (TLDW): Sandeep loads up the DAI contract and then impersonates a whale&#8217;s address. In one path, he transfers DAI to a typical wallet address and then measures the amount of gas it took. In a second path, he transfers DAI to an impersonated wallet address that is full of zeroes and measures its gas. After comparing the gas usage, he concludes that, yes, having more zeroes in your wallet address can result in gas savings! Watch the video for more details.</p>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div class="ast-oembed-container" style="height: 100%;"><iframe title="Does it really cost less gas when sending tokens to address with lots of zeros?" width="1200" height="675" src="https://www.youtube.com/embed/kXhHSMV3UTk?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+</div></figure>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+
+
+
+<p>That&#8217;s it for now! Send us a note if you have any questions. And if you&#8217;ve had a chance to play with Sidekik, we&#8217;d love to hear from you!</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/blog/better-onboarding-the-myth-busters-use-case/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Improved onboarding for developers</title>
+		<link>/blog/improved-onboarding-for-developers/</link>
+					<comments>/blog/improved-onboarding-for-developers/#respond</comments>
+		
+		<dc:creator><![CDATA[Rod Fuentes]]></dc:creator>
+		<pubDate>Mon, 12 Dec 2022 19:41:08 +0000</pubDate>
+				<category><![CDATA[Retro]]></category>
+		<category><![CDATA[smart contract]]></category>
+		<category><![CDATA[solidity]]></category>
+		<category><![CDATA[startups]]></category>
+		<guid isPermaLink="false">/?p=1141</guid>
+
+					<description><![CDATA[Startup Retro, 12/4–12/11 The last week just flew by! We were heads down on improving the onboarding process for developers, as we aim to shorten the usage-feedback-iteration flywheel.&#160; Read on to get a quick summary on our highlights, challenges, and asks. In particular, if you know anyone at ETHDenver, I’d love an assist on getting &#8230;<p class="read-more"> <a class="" href="/blog/improved-onboarding-for-developers/"> <span class="screen-reader-text">Improved onboarding for developers</span> Read More &#187;</a></p>]]></description>
+										<content:encoded><![CDATA[
+<h4>Startup Retro, 12/4–12/11</h4>
+
+
+
+<p>The last week just flew by! We were heads down on improving the onboarding process for developers, as we aim to shorten the usage-feedback-iteration flywheel.&nbsp;</p>
+
+
+
+<p>Read on to get a quick summary on our highlights, challenges, and asks. In particular, if you know anyone at ETHDenver, I’d love an assist on getting our speaker applications due consideration <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f605.png" alt="😅" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+
+
+
+<h3>Highlights</h3>
+
+
+
+<ul>
+<li><strong>Getting Noticed</strong>. We began BD outreach to a dev tool influencers and authors who compile “dev tool lists.” This week, Sidekik was listed on the <a rel="noreferrer noopener" href="https://github.com/ConsenSys/ethereum-developer-tools-list" target="_blank">ConsenSys Dev Tool</a> and the <a rel="noreferrer noopener" href="https://ethereumclassic.org/development/tooling" target="_blank">Ethereum Classic Dev Tool</a> lists.</li>
+
+
+
+<li><strong>Engaged User Sessions</strong>. User analytics show that some users spend 60+ minutes per session, while the average session is closer to 13 minutes. We’re pondering, “how do we turn those users into advocates?” Your ideas are welcome.</li>
+
+
+
+<li><strong>Feedback &amp; Support</strong>. We added Intercom to capture feedback and offer support. One user already suggested a useful feature: saving contracts that they interact with frequently, because contracts currently disappear upon refreshing the page.</li>
+</ul>
+
+
+
+<h3>Challenges</h3>
+
+
+
+<ul>
+<li><strong>Sync Directory Feature</strong>. It seems most users do not save their contract address and ABIs to a local file, preferring to onboard via our ‘sync directory’ feature. Reading every file in the browser’s main thread, however, was a painfully slow user experience. We updated our code this week, and we’re now delivering a much faster experience.</li>
+
+
+
+<li><strong>Onboarding.</strong> Some devs did not successfully onboard last week. Sidekik was built as an internal tool for users who had prior knowledge of how to setup and get value. Obviously, that’s not the case for a random developer coming to the web app for the first time. We see that stuck users read the browser’s console logs, and so we updated the error messages there to provide more onboarding guidance. Second, we fixed a bug where people uploaded ABI files first and then connected a chain, which caused the UI to enter a glitchy loop:</li>
+</ul>
+
+
+
+<figure class="wp-block-image aligncenter"><img decoding="async" src="https://cdn-images-1.medium.com/max/800/1*bHUYN6nqqs9c6-kqUI7yxQ.gif" alt=""/></figure>
+
+
+
+<h3>Asks</h3>
+
+
+
+<ul>
+<li><strong>ETHDenver.</strong> We submitted applications to speak at <strong>ETHDenver</strong>. If you have any connections to that speaker selection committee, I&#8217;d love an assist there.</li>
+</ul>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+
+
+
+<p>Thank you for reading and following our journey <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f64f.png" alt="🙏" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/blog/improved-onboarding-for-developers/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Feedback from Solidity Devs after Using SideKik</title>
+		<link>/blog/feedback-from-solidity-devs-after-using-sidekik/</link>
+					<comments>/blog/feedback-from-solidity-devs-after-using-sidekik/#respond</comments>
+		
+		<dc:creator><![CDATA[Rod Fuentes]]></dc:creator>
+		<pubDate>Sun, 04 Dec 2022 20:03:00 +0000</pubDate>
+				<category><![CDATA[Retro]]></category>
+		<category><![CDATA[dev tool]]></category>
+		<category><![CDATA[smart contract]]></category>
+		<category><![CDATA[solidity]]></category>
+		<guid isPermaLink="false">/?p=1142</guid>
+
+					<description><![CDATA[Startup Retro, 11/20–12/4 It’s been two weeks since our pivot, and we’re learning so much, so fast. In case you missed it: The For-Only-Because statement above needs more work as it narrowly captures the initial use case only. We’ll continue to refine that statement as we iterate on feedback. Highlights I love the product boyssssssssssss. &#8230;<p class="read-more"> <a class="" href="/blog/feedback-from-solidity-devs-after-using-sidekik/"> <span class="screen-reader-text">Feedback from Solidity Devs after Using SideKik</span> Read More &#187;</a></p>]]></description>
+										<content:encoded><![CDATA[
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+
+
+
+<h4>Startup Retro, 11/20–12/4</h4>
+
+
+
+<p>It’s been two weeks since our pivot, and we’re learning so much, so fast. In case you missed it:</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://cdn-images-1.medium.com/max/800/1*MbR4GBSkBQGm1P8wttDbkQ.png" alt=""/></figure>
+
+
+
+<p>The For-Only-Because statement above needs more work as it narrowly captures the initial use case only. We’ll continue to refine that statement as we iterate on feedback.</p>
+
+
+
+<h4>Highlights</h4>
+
+
+
+<ul>
+<li><strong>Discovery</strong>. We’ve conducted 15+ interviews with Solidity developers, plus a few more with crypto product leaders. Our understanding of the pain was validated: there’s no easy — or even good — way to interact with smart contracts.</li>
+
+
+
+<li><strong>Documentation</strong>. We released ‘good enough’ <a href="https://docs.sidekik.xyz/" rel="noreferrer noopener" target="_blank">documentation</a> to get users started on Sidekik. It could be better, but we’re focusing energy on capturing real feedback and feeding that into product development.</li>
+
+
+
+<li><strong>Feedback</strong>. Speaking of which, we’ve started receiving feedback from real users. Quotes:</li>
+</ul>
+
+
+
+<blockquote class="wp-block-quote">
+<p><em>I love the product boyssssssssssss. You saved my f*cking life this product development lifecycle was honestly taking so much time. . . . You’re onto something and happy to help out in any way I can.<br></em>&#8211; Silvertongue</p>
+</blockquote>
+
+
+
+<blockquote class="wp-block-quote">
+<p><em>Goerli Etherscan was hanging while deploying to testnet, and I got frustrated because I was under a tight deadline. I remembered SideKik and gave it a shot. It worked really well! Let me do everything I wanted to do. </em><br>&#8211; Ilan R.</p>
+</blockquote>
+
+
+
+<blockquote class="wp-block-quote">
+<p><em>I feel more confident diagnosing my code. Because of SideKik, I now know that my inputs are correct, so the error must be coming from my code. This is a win, and it helps me a lot.<br></em>&#8211; Austin M.</p>
+</blockquote>
+
+
+
+<h4>Challenges</h4>
+
+
+
+<ul>
+<li><strong>So many possibilities</strong>. There are many directions that we can take with the foundations that we’ve built. For instance, some users want automation, while others want a no-code solution to test or build smart contracts. We crave more feedback so we can nail down product-market fit.</li>
+</ul>
+
+
+
+<h4>Asks</h4>
+
+
+
+<ul>
+<li>Hit reply if you have any thoughts <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f917.png" alt="🤗" class="wp-smiley" style="height: 1em; max-height: 1em;" /></li>
+
+
+
+<li>Do you know any Solidity or EVM developers? We’d love an intro.</li>
+</ul>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+
+
+
+<p>Thank you for reading and following our journey <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f64f.png" alt="🙏" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/blog/feedback-from-solidity-devs-after-using-sidekik/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

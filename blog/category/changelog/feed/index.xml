@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Changelog &#8211; SideKik</title>
+	<atom:link href="/blog/category/changelog/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Easier EVM Smart Contract Interactions For Everyone</description>
+	<lastBuildDate>Tue, 13 Dec 2022 22:08:02 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>Better Onboarding &#038; The Myth Busters Use Case</title>
+		<link>/blog/better-onboarding-the-myth-busters-use-case/</link>
+					<comments>/blog/better-onboarding-the-myth-busters-use-case/#respond</comments>
+		
+		<dc:creator><![CDATA[Rod Fuentes]]></dc:creator>
+		<pubDate>Tue, 13 Dec 2022 16:07:52 +0000</pubDate>
+				<category><![CDATA[Changelog]]></category>
+		<category><![CDATA[dev tool]]></category>
+		<category><![CDATA[smart contract]]></category>
+		<category><![CDATA[solidity]]></category>
+		<guid isPermaLink="false">/?p=1143</guid>
+
+					<description><![CDATA[GM frens 👋 and welcome to the inaugural newsletter for our developer audience. In this post, we cover what&#8217;s new, what&#8217;s been fixed, and use cases from our community. We look forward to hearing from you! Infinite Loop Glitch in the UI 👾 We fixed a bug that occurred when users first uploaded ABI files &#8230;<p class="read-more"> <a class="" href="/blog/better-onboarding-the-myth-busters-use-case/"> <span class="screen-reader-text">Better Onboarding &#038; The Myth Busters Use Case</span> Read More &#187;</a></p>]]></description>
+										<content:encoded><![CDATA[
+<p>GM frens <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f44b.png" alt="👋" class="wp-smiley" style="height: 1em; max-height: 1em;" /> and welcome to the inaugural newsletter for our developer audience. In this post, we cover what&#8217;s new, what&#8217;s been fixed, and use cases from our community. We look forward to hearing from you!</p>
+
+
+
+<h1>Infinite Loop Glitch in the UI <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f47e.png" alt="👾" class="wp-smiley" style="height: 1em; max-height: 1em;" /></h1>
+
+
+
+<p>We fixed a bug that occurred when users first uploaded ABI files and then connected a chain, which caused the UI to enter a glitchy loop:</p>
+
+
+
+<figure class="wp-block-image aligncenter size-full"><img decoding="async" width="640" height="580" src="/wp-content/uploads/2022/12/onboarding-glitch.gif" alt="Infinite looping UI glitch was caused by repeat polling on a name clash. This was resolved." class="wp-image-1144"/></figure>
+
+
+
+<p>The front-end catches this flow and guides the user to connect a local chain or connect via MetaMask. This fix also solved the large number of getBalance() requests. </p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="511" src="/wp-content/uploads/2022/12/image-1024x511.png" alt="Sidekik now offers better messaging when there is an error to improve the user onboarding experience." class="wp-image-1145" srcset="/wp-content/uploads/2022/12/image-1024x511.png 1024w, /wp-content/uploads/2022/12/image-300x150.png 300w, /wp-content/uploads/2022/12/image-768x383.png 768w, /wp-content/uploads/2022/12/image-1536x766.png 1536w, /wp-content/uploads/2022/12/image-2048x1022.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h1>Better Error Messaging via Console.Logs <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f47e.png" alt="👾" class="wp-smiley" style="height: 1em; max-height: 1em;" /></h1>
+
+
+
+<p>Users asked for improved browser console.logs to understand errors. We added that in our most recent release: </p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="471" src="/wp-content/uploads/2022/12/improved-logs-sk-1024x471.png" alt="Sidekik also offers guidance in the browser's console.logs so that users don't get stuck. " class="wp-image-1146" srcset="/wp-content/uploads/2022/12/improved-logs-sk-1024x471.png 1024w, /wp-content/uploads/2022/12/improved-logs-sk-300x138.png 300w, /wp-content/uploads/2022/12/improved-logs-sk-768x353.png 768w, /wp-content/uploads/2022/12/improved-logs-sk.png 1190w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>We also provide in-browser instructions if you prefer to connect with MetaMask: </p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="479" src="/wp-content/uploads/2022/12/image-1-1024x479.png" alt="The console.logs guidance is also provided when users connect their MetaMask wallet, instead of running a local Hardhat node." class="wp-image-1148" srcset="/wp-content/uploads/2022/12/image-1-1024x479.png 1024w, /wp-content/uploads/2022/12/image-1-300x140.png 300w, /wp-content/uploads/2022/12/image-1-768x359.png 768w, /wp-content/uploads/2022/12/image-1.png 1194w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h1>Sync Directory is Faster <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f47e.png" alt="👾" class="wp-smiley" style="height: 1em; max-height: 1em;" /></h1>
+
+
+
+<p>We got feedback that our <strong>Sync Directory</strong> feature was too slow, which occurred because the web app polled (most) files in the sync&#8217;ed directory to determine if each file contained ABIs and addresses. We drastically improved this feature, especially for users on Foundry. If you tried this before, we suggest giving it another whirl. </p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="441" src="/wp-content/uploads/2022/12/image-2-1024x441.png" alt="Sidekik offers a Sync Directory feature to upload a smart contract project. Sidekik then searches the files in that directory for ABIs and deployed addresses." class="wp-image-1149" srcset="/wp-content/uploads/2022/12/image-2-1024x441.png 1024w, /wp-content/uploads/2022/12/image-2-300x129.png 300w, /wp-content/uploads/2022/12/image-2-768x331.png 768w, /wp-content/uploads/2022/12/image-2.png 1290w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>Note, the principle use case for uploading an entire directory is limited to scenarios where you have many local contracts that you want to import into Sidekik. If you&#8217;re interested in exploring one or a few contracts from your local environment, we strongly recommend using a JSON file and uploading it using the &#8220;Sync File(s)&#8221; button. Regardless, <strong>you must identify each contract address and its ABI</strong>. There are three ways to do this:</p>
+
+
+
+<p>1. You output a JSON file during your compile process that saves the deployed addresses and ABI to a local file. [<strong>Strongly Recommended <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f4aa.png" alt="💪" class="wp-smiley" style="height: 1em; max-height: 1em;" /></strong>]</p>
+
+
+
+<p>2. You point Sidekik to a directory to identify all ABIs (and addresses <em>if you are storing them to a file</em>).</p>
+
+
+
+<p>3. You manually enter a contract addresses and ABI in the input box. </p>
+
+
+
+<p>The third method is useful for contracts that are deployed to a chain. In a dev environment, that&#8217;s not the best way because addresses may change every time you deploy contracts.<br>For step-by-step instructions, along with a how-to video, go here: <a href="https://docs.sidekik.xyz/setup/overview/setting-up-contracts-with-sidekik" target="_blank" rel="noreferrer noopener">https://docs.sidekik.xyz/setup/overview/setting-up-contracts-with-sidekik</a> </p>
+
+
+
+<h1>Now Supporting Overloaded Functions <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f195.png" alt="🆕" class="wp-smiley" style="height: 1em; max-height: 1em;" /> <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f389.png" alt="🎉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></h1>
+
+
+
+<p>Thanks to feedback from @ChiliPaneer, we&#8217;ve added support for overloaded functions. As a reminder, overloading a function means that you can create a function that has the same name but different arguments and/or types. This is seen as three separate function calls in Sidekik, each with different input parameters: </p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="348" src="/wp-content/uploads/2022/12/image-3-1024x348.png" alt="Sidekik now supports overloaded functions in Solidity. " class="wp-image-1150" srcset="/wp-content/uploads/2022/12/image-3-1024x348.png 1024w, /wp-content/uploads/2022/12/image-3-300x102.png 300w, /wp-content/uploads/2022/12/image-3-768x261.png 768w, /wp-content/uploads/2022/12/image-3-1536x523.png 1536w, /wp-content/uploads/2022/12/image-3-2048x697.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h1>Use Case: Exploring Hypotheses <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f5fa.png" alt="🗺" class="wp-smiley" style="height: 1em; max-height: 1em;" /> <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f9d0.png" alt="🧐" class="wp-smiley" style="height: 1em; max-height: 1em;" /></h1>
+
+
+
+<p>Maybe you&#8217;ve heard that having more zeroes in a wallet address can save on gas fees. In this short video, Sandeep investigates this claim using Sidekik. Too-long-didn&#8217;t-watch (TLDW): Sandeep loads up the DAI contract and then impersonates a whale&#8217;s address. In one path, he transfers DAI to a typical wallet address and then measures the amount of gas it took. In a second path, he transfers DAI to an impersonated wallet address that is full of zeroes and measures its gas. After comparing the gas usage, he concludes that, yes, having more zeroes in your wallet address can result in gas savings! Watch the video for more details.</p>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<div class="ast-oembed-container" style="height: 100%;"><iframe title="Does it really cost less gas when sending tokens to address with lots of zeros?" width="1200" height="675" src="https://www.youtube.com/embed/kXhHSMV3UTk?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+</div></figure>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+
+
+
+<p>That&#8217;s it for now! Send us a note if you have any questions. And if you&#8217;ve had a chance to play with Sidekik, we&#8217;d love to hear from you!</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/blog/better-onboarding-the-myth-busters-use-case/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

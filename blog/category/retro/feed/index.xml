@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Retro &#8211; SideKik</title>
+	<atom:link href="/blog/category/retro/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Easier EVM Smart Contract Interactions For Everyone</description>
+	<lastBuildDate>Mon, 12 Dec 2022 20:04:29 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.1.1</generator>
+	<item>
+		<title>Improved onboarding for developers</title>
+		<link>/blog/improved-onboarding-for-developers/</link>
+					<comments>/blog/improved-onboarding-for-developers/#respond</comments>
+		
+		<dc:creator><![CDATA[Rod Fuentes]]></dc:creator>
+		<pubDate>Mon, 12 Dec 2022 19:41:08 +0000</pubDate>
+				<category><![CDATA[Retro]]></category>
+		<category><![CDATA[smart contract]]></category>
+		<category><![CDATA[solidity]]></category>
+		<category><![CDATA[startups]]></category>
+		<guid isPermaLink="false">/?p=1141</guid>
+
+					<description><![CDATA[Startup Retro, 12/4–12/11 The last week just flew by! We were heads down on improving the onboarding process for developers, as we aim to shorten the usage-feedback-iteration flywheel.&#160; Read on to get a quick summary on our highlights, challenges, and asks. In particular, if you know anyone at ETHDenver, I’d love an assist on getting &#8230;<p class="read-more"> <a class="" href="/blog/improved-onboarding-for-developers/"> <span class="screen-reader-text">Improved onboarding for developers</span> Read More &#187;</a></p>]]></description>
+										<content:encoded><![CDATA[
+<h4>Startup Retro, 12/4–12/11</h4>
+
+
+
+<p>The last week just flew by! We were heads down on improving the onboarding process for developers, as we aim to shorten the usage-feedback-iteration flywheel.&nbsp;</p>
+
+
+
+<p>Read on to get a quick summary on our highlights, challenges, and asks. In particular, if you know anyone at ETHDenver, I’d love an assist on getting our speaker applications due consideration <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f605.png" alt="😅" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+
+
+
+<h3>Highlights</h3>
+
+
+
+<ul>
+<li><strong>Getting Noticed</strong>. We began BD outreach to a dev tool influencers and authors who compile “dev tool lists.” This week, Sidekik was listed on the <a rel="noreferrer noopener" href="https://github.com/ConsenSys/ethereum-developer-tools-list" target="_blank">ConsenSys Dev Tool</a> and the <a rel="noreferrer noopener" href="https://ethereumclassic.org/development/tooling" target="_blank">Ethereum Classic Dev Tool</a> lists.</li>
+
+
+
+<li><strong>Engaged User Sessions</strong>. User analytics show that some users spend 60+ minutes per session, while the average session is closer to 13 minutes. We’re pondering, “how do we turn those users into advocates?” Your ideas are welcome.</li>
+
+
+
+<li><strong>Feedback &amp; Support</strong>. We added Intercom to capture feedback and offer support. One user already suggested a useful feature: saving contracts that they interact with frequently, because contracts currently disappear upon refreshing the page.</li>
+</ul>
+
+
+
+<h3>Challenges</h3>
+
+
+
+<ul>
+<li><strong>Sync Directory Feature</strong>. It seems most users do not save their contract address and ABIs to a local file, preferring to onboard via our ‘sync directory’ feature. Reading every file in the browser’s main thread, however, was a painfully slow user experience. We updated our code this week, and we’re now delivering a much faster experience.</li>
+
+
+
+<li><strong>Onboarding.</strong> Some devs did not successfully onboard last week. Sidekik was built as an internal tool for users who had prior knowledge of how to setup and get value. Obviously, that’s not the case for a random developer coming to the web app for the first time. We see that stuck users read the browser’s console logs, and so we updated the error messages there to provide more onboarding guidance. Second, we fixed a bug where people uploaded ABI files first and then connected a chain, which caused the UI to enter a glitchy loop:</li>
+</ul>
+
+
+
+<figure class="wp-block-image aligncenter"><img decoding="async" src="https://cdn-images-1.medium.com/max/800/1*bHUYN6nqqs9c6-kqUI7yxQ.gif" alt=""/></figure>
+
+
+
+<h3>Asks</h3>
+
+
+
+<ul>
+<li><strong>ETHDenver.</strong> We submitted applications to speak at <strong>ETHDenver</strong>. If you have any connections to that speaker selection committee, I&#8217;d love an assist there.</li>
+</ul>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+
+
+
+<p>Thank you for reading and following our journey <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f64f.png" alt="🙏" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/blog/improved-onboarding-for-developers/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Feedback from Solidity Devs after Using SideKik</title>
+		<link>/blog/feedback-from-solidity-devs-after-using-sidekik/</link>
+					<comments>/blog/feedback-from-solidity-devs-after-using-sidekik/#respond</comments>
+		
+		<dc:creator><![CDATA[Rod Fuentes]]></dc:creator>
+		<pubDate>Sun, 04 Dec 2022 20:03:00 +0000</pubDate>
+				<category><![CDATA[Retro]]></category>
+		<category><![CDATA[dev tool]]></category>
+		<category><![CDATA[smart contract]]></category>
+		<category><![CDATA[solidity]]></category>
+		<guid isPermaLink="false">/?p=1142</guid>
+
+					<description><![CDATA[Startup Retro, 11/20–12/4 It’s been two weeks since our pivot, and we’re learning so much, so fast. In case you missed it: The For-Only-Because statement above needs more work as it narrowly captures the initial use case only. We’ll continue to refine that statement as we iterate on feedback. Highlights I love the product boyssssssssssss. &#8230;<p class="read-more"> <a class="" href="/blog/feedback-from-solidity-devs-after-using-sidekik/"> <span class="screen-reader-text">Feedback from Solidity Devs after Using SideKik</span> Read More &#187;</a></p>]]></description>
+										<content:encoded><![CDATA[
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+
+
+
+<h4>Startup Retro, 11/20–12/4</h4>
+
+
+
+<p>It’s been two weeks since our pivot, and we’re learning so much, so fast. In case you missed it:</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://cdn-images-1.medium.com/max/800/1*MbR4GBSkBQGm1P8wttDbkQ.png" alt=""/></figure>
+
+
+
+<p>The For-Only-Because statement above needs more work as it narrowly captures the initial use case only. We’ll continue to refine that statement as we iterate on feedback.</p>
+
+
+
+<h4>Highlights</h4>
+
+
+
+<ul>
+<li><strong>Discovery</strong>. We’ve conducted 15+ interviews with Solidity developers, plus a few more with crypto product leaders. Our understanding of the pain was validated: there’s no easy — or even good — way to interact with smart contracts.</li>
+
+
+
+<li><strong>Documentation</strong>. We released ‘good enough’ <a href="https://docs.sidekik.xyz/" rel="noreferrer noopener" target="_blank">documentation</a> to get users started on Sidekik. It could be better, but we’re focusing energy on capturing real feedback and feeding that into product development.</li>
+
+
+
+<li><strong>Feedback</strong>. Speaking of which, we’ve started receiving feedback from real users. Quotes:</li>
+</ul>
+
+
+
+<blockquote class="wp-block-quote">
+<p><em>I love the product boyssssssssssss. You saved my f*cking life this product development lifecycle was honestly taking so much time. . . . You’re onto something and happy to help out in any way I can.<br></em>&#8211; Silvertongue</p>
+</blockquote>
+
+
+
+<blockquote class="wp-block-quote">
+<p><em>Goerli Etherscan was hanging while deploying to testnet, and I got frustrated because I was under a tight deadline. I remembered SideKik and gave it a shot. It worked really well! Let me do everything I wanted to do. </em><br>&#8211; Ilan R.</p>
+</blockquote>
+
+
+
+<blockquote class="wp-block-quote">
+<p><em>I feel more confident diagnosing my code. Because of SideKik, I now know that my inputs are correct, so the error must be coming from my code. This is a win, and it helps me a lot.<br></em>&#8211; Austin M.</p>
+</blockquote>
+
+
+
+<h4>Challenges</h4>
+
+
+
+<ul>
+<li><strong>So many possibilities</strong>. There are many directions that we can take with the foundations that we’ve built. For instance, some users want automation, while others want a no-code solution to test or build smart contracts. We crave more feedback so we can nail down product-market fit.</li>
+</ul>
+
+
+
+<h4>Asks</h4>
+
+
+
+<ul>
+<li>Hit reply if you have any thoughts <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f917.png" alt="🤗" class="wp-smiley" style="height: 1em; max-height: 1em;" /></li>
+
+
+
+<li>Do you know any Solidity or EVM developers? We’d love an intro.</li>
+</ul>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+
+
+
+<p>Thank you for reading and following our journey <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f64f.png" alt="🙏" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/blog/feedback-from-solidity-devs-after-using-sidekik/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>
